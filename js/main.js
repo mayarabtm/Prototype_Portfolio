@@ -37,6 +37,12 @@ for (let i = 0; i < toggleModal.length; i++) {
     });
 }
 
+//Recalcula altura da galeria 
+let postGallery = document.querySelector('.jl-post-gallery');
+let postGalleryHeight = postGallery.clientHeight
+postGallery.style.height = (postGalleryHeight - 270)+'px';
+
+
 // Animando Elementos on Scroll com Waypoints (dispara ações para esconder o scroll Down) //
 let myScrollDown = document.querySelector('.jl-scroll-down');
 let waypoint = new Waypoint({
@@ -45,5 +51,5 @@ let waypoint = new Waypoint({
         myScrollDown.classList.toggle('jl-fade-out');
     },
     offset: '80%'
-})
+});
 
