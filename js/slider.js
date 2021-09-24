@@ -1,6 +1,6 @@
 // PORTFOLIO SLIDER
 
-//Declarando variaveis do slider
+
 let sliderContainer = document.querySelector('.jl-slider-container');
 let sliderList = document.querySelector('.jl-slider-list');
 let sliderItem = document.querySelectorAll('.jl-portfolio-item');
@@ -14,8 +14,7 @@ let totalSlide = document.querySelector('.jl-total-slide');
 let currentCounter = 1;
 let navItems = document.querySelectorAll('.jl-item-navigator a');
 let navCounter = document.querySelector('.jl-navigator-counter span');
-//Capturando larguras individuais
-//para acessar ao elemento pai e o offsetWidth pega o tamanho do elemento pai (capturou a largura do containeri col-sm-10)
+
 let containerWidth = sliderContainer.parentElement.offsetWidth;
 
 
@@ -23,20 +22,18 @@ let containerWidth = sliderContainer.parentElement.offsetWidth;
 //passando a largura pro container
 sliderContainer.style.width = containerWidth + 'px';
 
-//passando a altura do container para cada li e adicionando a unidade de medida para essa altura
+
 for (let i = 0; i < sliderItem.length; i++) {
     sliderItem[i].style.width = containerWidth + 'px';
 
-    //o sliderList vai receber  o valor de sliderItem e a cada interação vai ser incrementado com o tamanho do sliderItem
     sliderListWidth += sliderItem[i].offsetWidth;
 }
 
 sliderList.style.width = sliderListWidth + 'px';
 
 
-//Fazendo Animação do Slide onClick
 
-//HANDLERS (METODOS)
+//HANDLERS
 
 //Next Slide Animação
 let nextSlideAnim = function () {
@@ -47,7 +44,6 @@ let nextSlideAnim = function () {
         return;
     }
 
-    //pegara  o valor do container para deslocar negativamente e ao mesmo tempo somando ao sliderPos
     sliderPos -= containerWidth;
 
     anime({
@@ -75,7 +71,6 @@ let prevSlideAnim = function () {
 
 }
 
-//Counter formata o zero a esquerda do numero
 let counterFormatter = function(n){
     if (n < 10) {
         return '0' + n;
@@ -140,7 +135,7 @@ let setActiveSlide = function(){
 }
 
 
-//Limpa o marcador conforme clicado no nav
+//Limpador de marcarção
 let changeActive = function(){
     for (let i = 0; i < navItems.length; i++) {
         navItems[i].classList.remove('jl-item-active');
@@ -165,7 +160,6 @@ let changeActive = function(){
 
 //ACTIONS
 
-//animara o primeiro item que possui a classe já
 anime({
     targets: '.jl-item-active',
     width: 90

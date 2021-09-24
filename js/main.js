@@ -1,4 +1,3 @@
-//Declarando variaveis
 let btnContact = document.querySelector('.jl-btn-contact');
 let toggleModal = document.querySelectorAll('.jl-toggle-modal')
 
@@ -14,17 +13,15 @@ window.addEventListener('load', function () {
 });
 
 
-//Abrindo e fechando infos de contato//
 btnContact.addEventListener('click', function () {
     let boxContact = document.querySelector('.jl-contact-info');
 
-    //abre e fecha a modal e troca de icon (this acessa o elemento raiz da função)
     boxContact.classList.toggle('jl-is-open');
     this.classList.toggle('jl-change-icon')
 
 });
 
-// Abrindo e Fechando o Modal de Orçamento //
+
 for (let i = 0; i < toggleModal.length; i++) {
     toggleModal[i].addEventListener('click', function () {
         let overlay = document.querySelector('.jl-overlay');
@@ -43,7 +40,7 @@ let postGalleryHeight = postGallery.clientHeight
 postGallery.style.height = (postGalleryHeight - 270)+'px';
 
 
-// Animando Elementos on Scroll com Waypoints (dispara ações para esconder o scroll Down) //
+// Animando Elementos on Scroll com Waypoints//
 let myScrollDown = document.querySelector('.jl-scroll-down');
 let waypoint = new Waypoint({
     element: myScrollDown,
